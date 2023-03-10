@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import etu1777.framework.Mapping;
-import utils.Utils;
+import etu1777.framework.Utils;
 
 public class FrontServlet extends HttpServlet{
     HashMap<String, Mapping> mappingUrls;
@@ -20,6 +20,7 @@ public class FrontServlet extends HttpServlet{
         url=utils.getCoreURL(url);
         PrintWriter write=res.getWriter();
         write.println(url);
+        write.println(utils.getAllPackagesClasses());
     }
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
         processRequest(req, res);
